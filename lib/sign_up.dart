@@ -150,7 +150,7 @@ class _SignUpState extends State<SignUp> {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
-                  'Sandip',
+                  'Sign up',
                   style: TextStyle(
                   fontSize: 20,
                   color: Colors.white
