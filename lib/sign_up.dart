@@ -1,0 +1,166 @@
+import 'package:flutter/material.dart';
+import 'package:multipurpose/sign_up_items.dart';
+
+class SignUp extends StatefulWidget {
+  const new({super.key});
+
+  @override
+  State<SignUp> createState() => _SignUpState();
+}
+
+class _SignUpState extends State<SignUp> {
+
+  bool visibility = false;
+  bool check = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                'Sign Up',
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold
+                ),
+              ),
+            ),
+            SizedBox(height: 5,),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                'Create an account to get start'
+              )
+            ),
+            SizedBox(height: 30,),
+            SignUpItems(
+              title: 'Name',
+              hint: 'Sandip Haldar',
+              isPassword: false,
+            ),
+            SizedBox(height: 20,),
+            SignUpItems(
+              title: 'Email Address', 
+              hint: 'name@gmail.com',
+              isPassword: false,
+            ),
+            SizedBox(height: 20,),
+            SignUpItems(
+              title: 'Password', 
+              hint: 'Create Password',
+              isPassword: true,
+            ),
+            SizedBox(height: 10,),
+            SignUpItems(
+              title: null, 
+              hint: 'Confirm Password',
+              isPassword: true,
+            ),
+            SizedBox(height: 20,),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                children: [
+                  Checkbox(
+                    checkColor: Color(0xff006FFD),
+                    activeColor: Colors.white,
+                    //hoverColor: Colors.black,
+                    value: check, 
+                    onChanged: (value){
+                      check = value ?? false;
+                      setState(() {
+                        
+                      });
+                    }
+                  ),
+                  SizedBox(width: 10,),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            'I\'ve read and agree with the',
+                            style: TextStyle(
+                              fontSize: 15
+                            ),
+                          ),
+                          SizedBox(width: 5,),
+                          Text(
+                            'terms and',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff006FFD)
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Condition',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff006FFD)
+                            ),
+                          ),
+                          SizedBox(width: 5,),
+                          Text(
+                            'and the',
+                            style: TextStyle(
+                              fontSize: 15
+                            ),
+                          ),
+                          SizedBox(width: 5,),
+                          Text(
+                            'Privacy Policy.',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff006FFD)
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
+            SizedBox(height: 40,),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Container(
+                height: 60,
+                width: double.infinity,
+                alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: Color(0xff006FFD),
+                    border: Border.all(
+                    color: Colors.black,
+                    width: 1,
+                  ),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Text(
+                  'Sign Up',
+                  style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.white
+                ),
+              ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
