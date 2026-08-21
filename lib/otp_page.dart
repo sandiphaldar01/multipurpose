@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:multipurpose/otp_box.dart';
+import 'package:multipurpose/settings.dart';
 
 class OtpPage extends StatefulWidget {
   const new({super.key});
@@ -67,26 +68,34 @@ class _OtpPageState extends State<OtpPage> {
               SizedBox(height: 40,),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Container(
-                    height: 60,
-                    width: double.infinity,
-                    alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: Color(0xff006FFD),
-                        border: Border.all(
-                        color: Colors.black,
-                        width: 1,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Settings()) 
+                    );
+                  },
+                  child: Container(
+                      height: 60,
+                      width: double.infinity,
+                      alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: Color(0xff006FFD),
+                          border: Border.all(
+                          color: Colors.black,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(20),
                       ),
-                      borderRadius: BorderRadius.circular(20),
+                      child: Text(
+                        'Continue',
+                        style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white
+                      ),
                     ),
-                    child: Text(
-                      'Continue',
-                      style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white
                     ),
-                  ),
-                  ),
+                ),
               ),
             ],
           ),
