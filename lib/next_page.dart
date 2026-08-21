@@ -107,7 +107,6 @@ class _NextPageState extends State<NextPage> {
                     }
                     else {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        
                         SnackBar(
                           backgroundColor: Colors.red,
                           content: 

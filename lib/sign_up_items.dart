@@ -5,8 +5,9 @@ class SignUpItems extends StatefulWidget {
   final String? title;
   final String hint;
   final bool isPassword;
+  final TextEditingController textEditingController;
 
-  const new({super.key, required this.title, required this.hint, required this.isPassword,});
+  const new({super.key, required this.title, required this.hint, required this.isPassword, required this.textEditingController});
 
   @override
   State<SignUpItems> createState() => _SignUpItemsState();
@@ -30,6 +31,7 @@ class _SignUpItemsState extends State<SignUpItems> {
           ),
           SizedBox(height: 8,),
           TextFormField(
+            controller: widget.textEditingController,
             obscureText: widget.isPassword ? visibility : false,
             decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(

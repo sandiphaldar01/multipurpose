@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multipurpose/otp_page.dart';
 import 'package:multipurpose/sign_up_items.dart';
 
 class SignUp extends StatefulWidget {
@@ -12,6 +13,11 @@ class _SignUpState extends State<SignUp> {
 
   bool visibility = false;
   bool check = false;
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmPasswordController =TextEditingController();
+   
 
   @override
   Widget build(BuildContext context) {
@@ -39,24 +45,28 @@ class _SignUpState extends State<SignUp> {
             ),
             SizedBox(height: 30,),
             SignUpItems(
+              textEditingController: nameController,
               title: 'Name',
               hint: 'Sandip Haldar',
               isPassword: false,
             ),
             SizedBox(height: 20,),
             SignUpItems(
+              textEditingController: emailController,
               title: 'Email Address', 
               hint: 'name@gmail.com',
               isPassword: false,
             ),
             SizedBox(height: 20,),
             SignUpItems(
+              textEditingController: passwordController,
               title: 'Password', 
               hint: 'Create Password',
               isPassword: true,
             ),
             SizedBox(height: 10,),
             SignUpItems(
+              textEditingController: confirmPasswordController,
               title: null, 
               hint: 'Confirm Password',
               isPassword: true,
@@ -72,11 +82,19 @@ class _SignUpState extends State<SignUp> {
                     //hoverColor: Colors.black,
                     value: check, 
                     onChanged: (value){
-                      check = value ?? false;
-                      setState(() {
+                      if (
+                        nameController.text.isNotEmpty && 
+                        emailController.text.isNotEmpty && 
+                        passwordController.text.isNotEmpty &&
+                        confirmPasswordController.text.isNotEmpty &&
+                        passwordController.text == confirmPasswordController.text
+                      ) {
+                        check = value ?? false;
+                        setState(() {
                         
                       });
                     }
+                   }
                   ),
                   SizedBox(width: 10,),
                   Column(
@@ -137,25 +155,54 @@ class _SignUpState extends State<SignUp> {
             SizedBox(height: 40,),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Container(
-                height: 60,
-                width: double.infinity,
-                alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: Color(0xff006FFD),
-                    border: Border.all(
-                    color: Colors.black,
-                    width: 1,
+              child: InkWell(
+                onTap: () {
+                  if (check = check) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => OtpPage()) 
+                  );
+                  }
+                  else {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        backgroundColor: Colors.red,
+                        content: 
+                        Text(
+                          textAlign: TextAlign.center,
+                          'Terms and Condition doe\'s not accept',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold
+                          ),
+                        )
+                      )
+                    );
+                  }
+                  setState(() {
+                    
+                  });
+                },
+                child: Container(
+                  height: 60,
+                  width: double.infinity,
+                  alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: Color(0xff006FFD),
+                      border: Border.all(
+                      color: Colors.black,
+                      width: 1,
+                    ),
+                    borderRadius: BorderRadius.circular(20),
                   ),
-                  borderRadius: BorderRadius.circular(20),
+                  child: Text(
+                    'Sign up',
+                    style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white
+                  ),
                 ),
-                child: Text(
-                  'Sign up',
-                  style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white
                 ),
-              ),
               ),
             ),
           ],
