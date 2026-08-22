@@ -29,14 +29,14 @@ class _SettingsState extends State<Settings> {
               Stack(
                 alignment: AlignmentDirectional.bottomEnd,
                 children: [ 
-                  SvgPicture.asset(
-                  'assets/profile.svg',
+                  Image.asset(
+                  'assets/Avatar.png',
                   height: 100,
                   width: 100,
                   fit: BoxFit.cover,
                  ),
                 Container(
-                  padding: EdgeInsets.all(2),
+                  padding: EdgeInsets.all(4),
                   decoration: BoxDecoration(
                     color: Color(0xff006FFD),
                     shape: BoxShape.circle
@@ -46,6 +46,36 @@ class _SettingsState extends State<Settings> {
                   ),
                 ),
                ]
+              ),
+              SizedBox(height: 15,),
+              Text(
+                'Sandip Haldar',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold
+                ),
+              ),
+              Text(
+                '@sandiphaldar01'
+              ),
+              SizedBox(height: 20,),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 25),
+                child: Row(
+                  children: [
+                    Text(
+                      'Saved Messages',
+                      style: TextStyle(
+                        fontSize: 16
+                      ),
+                    ),
+                    Spacer(),
+                    Icon(
+                      Icons.keyboard_arrow_right_outlined,
+                      size: 28,
+                    ),
+                  ],
+                ),
               )
             ],
           ),
