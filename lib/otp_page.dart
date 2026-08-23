@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multipurpose/main_page.dart';
 import 'package:multipurpose/otp_box.dart';
 import 'package:multipurpose/settings.dart';
 
@@ -72,7 +73,7 @@ class _OtpPageState extends State<OtpPage> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Settings()) 
+                      MaterialPageRoute(builder: (context) => MainPage()) 
                     );
                   },
                   child: Container(

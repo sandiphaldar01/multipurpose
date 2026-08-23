@@ -11,28 +11,8 @@ class Settings extends StatefulWidget {
 class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: (value) {
-          
-        },
-        selectedItemColor: Color(0xff006FFD),
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.message_rounded),
-            label: 'Chats'
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Friends'
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings'
-          )
-        ]
-      ),
-      body: SafeArea(
+    return Container(
+      child: SafeArea(
         child: Align(
           alignment: Alignment.center,
           child: Column(
