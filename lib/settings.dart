@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:multipurpose/settings_items.dart';
 
 class Settings extends StatefulWidget {
   const new({super.key});
@@ -12,6 +12,26 @@ class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: (value) {
+          
+        },
+        selectedItemColor: Color(0xff006FFD),
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message_rounded),
+            label: 'Chats'
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Friends'
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings'
+          )
+        ]
+      ),
       body: SafeArea(
         child: Align(
           alignment: Alignment.center,
@@ -59,24 +79,94 @@ class _SettingsState extends State<Settings> {
                 '@sandiphaldar01'
               ),
               SizedBox(height: 20,),
+              SettingsItems(
+                items: 'Saved Messages'
+              ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25),
-                child: Row(
-                  children: [
-                    Text(
-                      'Saved Messages',
-                      style: TextStyle(
-                        fontSize: 16
-                      ),
-                    ),
-                    Spacer(),
-                    Icon(
-                      Icons.keyboard_arrow_right_outlined,
-                      size: 28,
-                    ),
-                  ],
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20
                 ),
-              )
+                child: Divider(
+                  height: 35,
+                ),
+              ),
+              SettingsItems(
+                items: 'Recent Calls'
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20
+                ),
+                child: Divider(
+                  height: 35,
+                ),
+              ),
+              SettingsItems(
+                items: 'Devices'
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20
+                ),
+                child: Divider(
+                  height: 35,
+                ),
+              ),
+              SettingsItems(
+                items: 'notifications'
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20
+                ),
+                child: Divider(
+                  height: 35,
+                ),
+              ),
+              SettingsItems(
+                items: 'Appearance'
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20
+                ),
+                child: Divider(
+                  height: 35,
+                ),
+              ),
+              SettingsItems(
+                items: 'Language'
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20
+                ),
+                child: Divider(
+                  height: 35,
+                ),
+              ),
+              SettingsItems(
+                items: 'Privacy & Security'
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20
+                ),
+                child: Divider(
+                  height: 35,
+                ),
+              ),
+              SettingsItems(
+                items: 'Storage'
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 20
+                ),
+                child: Divider(
+                  height: 35,
+                ),
+              ),
             ],
           ),
         ),
