@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:multipurpose/main_page.dart';
 import 'package:multipurpose/otp_box.dart';
-import 'package:multipurpose/settings.dart';
 
 class OtpPage extends StatefulWidget {
   const new({super.key});

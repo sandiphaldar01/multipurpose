@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:multipurpose/chats_items.dart';
 
 class Chats extends StatefulWidget {
   const new({super.key});
@@ -40,11 +41,15 @@ class _ChatsState extends State<Chats> {
               ],
             ),
           ),
+
+          SizedBox(height: 20,),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: TextFormField(
+              
               decoration: InputDecoration(
                 hintText: 'Search',
+                
                 prefixIcon: Icon(Icons.search),
                 filled: true,
                 fillColor: Color(0xffF8F9FE),
@@ -68,6 +73,15 @@ class _ChatsState extends State<Chats> {
                   borderRadius: BorderRadius.circular(30)
                 )
               ),
+            ),
+          ),
+          SizedBox(height: 40,),
+          Expanded(
+            child: ListView.separated(
+              separatorBuilder: (context, index) => SizedBox(height: 30,),
+              shrinkWrap: true,
+              itemCount: 15,
+              itemBuilder: (context, i) => ChatsItems()
             ),
           )
         ],
