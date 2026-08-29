@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:multipurpose/chats_items.dart';
+import 'package:multipurpose/pallabi.dart';
 
 class Chats extends StatefulWidget {
   const new({super.key});
@@ -13,7 +14,7 @@ class _ChatsState extends State<Chats> {
 
   final List<String> _names = [
 
-    'pallabi',
+    'Pallabi',
     'Baba',
     'Maa',
     'Anirban da',
@@ -42,6 +43,10 @@ class _ChatsState extends State<Chats> {
                 Expanded(
                   child: Text(
                     'Chats',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -92,7 +97,20 @@ class _ChatsState extends State<Chats> {
               separatorBuilder: (context, index) => SizedBox(height: 30,),
               shrinkWrap: true,
               itemCount: _names.length,
-              itemBuilder: (context, i) => ChatsItems(name: _names[i],)
+              itemBuilder: (context, i) => 
+              InkWell(
+                onTap: () {
+                  if (i == 0) {
+                    Navigator.push(
+                    context, 
+                    MaterialPageRoute(builder: (context) => Pallabi())
+                  );
+                 }
+                },
+                child: ChatsItems(
+                  name: _names[i],
+                ),
+              )
             ),
           )
         ],
