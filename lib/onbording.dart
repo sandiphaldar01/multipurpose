@@ -64,7 +64,8 @@ class _OnbordingState extends State<Onbording> {
                   Dot(color: _i == 1? Colors.cyan : Colors.grey,),
                   SizedBox(width: 10,), 
                   Dot(color: _i == 2? Colors.cyan : Colors.grey,)
-                ]),
+                ]
+              ),
             ),
             SizedBox(height: 20),
             Text(
@@ -79,37 +80,33 @@ class _OnbordingState extends State<Onbording> {
               'Enjoy these pre-made components and worry only \nabout creating the best product ever.'
             ),
             SizedBox(height: 50),
-            InkWell(
-              onTap: () {
-                Navigator.push(
-                  context, 
-                  MaterialPageRoute(builder: ((context) => NextPage())
-                )
-                );
-              },
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 20),
-                child: Container(
-                  height: 60,
-                  width: double.infinity,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    color: Color(0xff006FFD),
-                    border: Border.all(
-                      color: Colors.black,
-                      width: 1,
-                    ),
-                    borderRadius: BorderRadius.circular(20),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xff066FFD),
+                  minimumSize: Size.fromHeight(50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)
                   ),
-                  child: Text('Next',
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                ),
+                onPressed: (){
+                  Navigator.push(
+                    context, 
+                    MaterialPageRoute(builder: ((context) => NextPage())
+                  )
+                 );
+                }, 
+                child: Text(
+                  'Next',
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.white
                   ),
-                ),
-                ),
+                )
               ),
-            ),
+            )
           ],
         ),
       ),

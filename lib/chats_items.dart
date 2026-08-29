@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ChatsItems extends StatelessWidget {
-  const new({super.key});
+
+  final name;
+  const new({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,11 @@ class ChatsItems extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'harley James'
+                name,
+                style: TextStyle(
+                  fontSize: 17,
+                  fontWeight: FontWeight.bold
+                ),
               ),
               Text(
                 'Stand up for what you belive in'

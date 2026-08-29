@@ -10,6 +10,17 @@ class Chats extends StatefulWidget {
 }
 
 class _ChatsState extends State<Chats> {
+
+  final List<String> _names = [
+
+    'pallabi',
+    'Baba',
+    'Maa',
+    'Anirban da',
+    'Bipasa di',
+    'P - Maa'
+
+  ];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -80,8 +91,8 @@ class _ChatsState extends State<Chats> {
             child: ListView.separated(
               separatorBuilder: (context, index) => SizedBox(height: 30,),
               shrinkWrap: true,
-              itemCount: 15,
-              itemBuilder: (context, i) => ChatsItems()
+              itemCount: _names.length,
+              itemBuilder: (context, i) => ChatsItems(name: _names[i],)
             ),
           )
         ],
