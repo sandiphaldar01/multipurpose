@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Pallabi extends StatefulWidget {
+class Convertation extends StatefulWidget {
   const new({super.key});
 
   @override
-  State<Pallabi> createState() => _PallabiState();
+  State<Convertation> createState() => _ConvertationState();
 }
 
-class _PallabiState extends State<Pallabi> {
+class _ConvertationState extends State<Convertation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -172,14 +172,43 @@ class _PallabiState extends State<Pallabi> {
               ),
             ),
             Spacer(),
-            Row(
-              children: [
-                Icon(
-                  Icons.add,
-                  size: 35,
-                  color: Color(0xff006FFD),
-                ),
-              ],
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.add,
+                    size: 35,
+                    color: Color(0xff006FFD),
+                  ),
+                  Expanded(
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                        filled: true,
+                        fillColor: Color(0xffF8F9FE),
+                        suffixIcon: Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Color(0xff006FFD)
+                          ),
+                          child: Icon(
+                            Icons.send_rounded,
+                            color: Colors.white,
+                            size: 30,
+                          ),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(35),
+                          borderSide: BorderSide(
+                            width: 0,
+                            style: BorderStyle.none
+                          )
+                        )
+                      ),
+                    ),
+                  )
+                ],
+              ),
             )
           ],
         ),

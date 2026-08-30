@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:multipurpose/chats_items.dart';
-import 'package:multipurpose/pallabi.dart';
+import 'package:multipurpose/convertation.dart';
 
 class Chats extends StatefulWidget {
   const new({super.key});
@@ -103,7 +103,7 @@ class _ChatsState extends State<Chats> {
                   if (i == 0) {
                     Navigator.push(
                     context, 
-                    MaterialPageRoute(builder: (context) => Pallabi())
+                    MaterialPageRoute(builder: (context) => Convertation())
                   );
                  }
                 },
