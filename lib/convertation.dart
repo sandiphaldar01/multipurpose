@@ -20,9 +20,14 @@ class _ConvertationState extends State<Convertation> {
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 children: [
-                  Icon(
-                    Icons.arrow_back_ios,
-                    color: Color(0xff006FFD),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Icon(
+                      Icons.arrow_back_ios,
+                      color: Color(0xff006FFD),
+                    ),
                   ),
                   Expanded(
                     child: Text(
