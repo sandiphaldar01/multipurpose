@@ -9,6 +9,17 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
+
+  List<String> settings = [
+    'Saved Messages',
+    'Recent Calls',
+    'Devices',
+    'Notifications',
+    'Appearance',
+    'Language',
+    'Privacy & Security',
+    'Storage'
+  ];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -59,94 +70,103 @@ class _SettingsState extends State<Settings> {
                 '@sandiphaldar01'
               ),
               SizedBox(height: 20,),
-              SettingsItems(
-                items: 'Saved Messages'
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20
+              // SettingsItems(
+              //   items: 'Saved Messages'
+              // ),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(
+              //     horizontal: 20
+              //   ),
+              //   child: Divider(
+              //     height: 35,
+              //   ),
+              // ),
+              // SettingsItems(
+              //   items: 'Recent Calls'
+              // ),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(
+              //     horizontal: 20
+              //   ),
+              //   child: Divider(
+              //     height: 35,
+              //   ),
+              // ),
+              // SettingsItems(
+              //   items: 'Devices'
+              // ),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(
+              //     horizontal: 20
+              //   ),
+              //   child: Divider(
+              //     height: 35,
+              //   ),
+              // ),
+              // SettingsItems(
+              //   items: 'notifications'
+              // ),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(
+              //     horizontal: 20
+              //   ),
+              //   child: Divider(
+              //     height: 35,
+              //   ),
+              // ),
+              // SettingsItems(
+              //   items: 'Appearance'
+              // ),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(
+              //     horizontal: 20
+              //   ),
+              //   child: Divider(
+              //     height: 35,
+              //   ),
+              // ),
+              // SettingsItems(
+              //   items: 'Language'
+              // ),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(
+              //     horizontal: 20
+              //   ),
+              //   child: Divider(
+              //     height: 35,
+              //   ),
+              // ),
+              // SettingsItems(
+              //   items: 'Privacy & Security'
+              // ),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(
+              //     horizontal: 20
+              //   ),
+              //   child: Divider(
+              //     height: 35,
+              //   ),
+              // ),
+              // SettingsItems(
+              //   items: 'Storage'
+              // ),
+              // Padding(
+              //   padding: EdgeInsets.symmetric(
+              //     horizontal: 20
+              //   ),
+              //   child: Divider(
+              //     height: 35,
+              //   ),
+              // ),
+              Flexible(
+                child: ListView.separated(
+                  itemBuilder: (context, i) => SettingsItems(
+                    items: settings[i]
+                  ), 
+                  separatorBuilder: (context, index) => Divider(height: 35,), 
+                  itemCount: settings.length
                 ),
-                child: Divider(
-                  height: 35,
-                ),
-              ),
-              SettingsItems(
-                items: 'Recent Calls'
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20
-                ),
-                child: Divider(
-                  height: 35,
-                ),
-              ),
-              SettingsItems(
-                items: 'Devices'
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20
-                ),
-                child: Divider(
-                  height: 35,
-                ),
-              ),
-              SettingsItems(
-                items: 'notifications'
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20
-                ),
-                child: Divider(
-                  height: 35,
-                ),
-              ),
-              SettingsItems(
-                items: 'Appearance'
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20
-                ),
-                child: Divider(
-                  height: 35,
-                ),
-              ),
-              SettingsItems(
-                items: 'Language'
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20
-                ),
-                child: Divider(
-                  height: 35,
-                ),
-              ),
-              SettingsItems(
-                items: 'Privacy & Security'
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20
-                ),
-                child: Divider(
-                  height: 35,
-                ),
-              ),
-              SettingsItems(
-                items: 'Storage'
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 20
-                ),
-                child: Divider(
-                  height: 35,
-                ),
-              ),
+              )
             ],
           ),
         ),
