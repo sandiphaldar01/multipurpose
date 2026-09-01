@@ -155,8 +155,16 @@ class _SignUpState extends State<SignUp> {
             SizedBox(height: 40,),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
-              child: InkWell(
-                onTap: () {
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xff066FFD),
+                  minimumSize: Size.fromHeight(50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)
+                  ),
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                ),
+                onPressed: (){
                   if (check = check) {
                   Navigator.push(
                     context,
@@ -182,29 +190,16 @@ class _SignUpState extends State<SignUp> {
                   setState(() {
                     
                   });
-                },
-                child: Container(
-                  height: 60,
-                  width: double.infinity,
-                  alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: Color(0xff006FFD),
-                      border: Border.all(
-                      color: Colors.black,
-                      width: 1,
-                    ),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Text(
-                    'Sign up',
-                    style: TextStyle(
+                }, 
+                child: Text(
+                  'Sign up',
+                  style: TextStyle(
                     fontSize: 20,
                     color: Colors.white
                   ),
-                ),
-                ),
+                )
               ),
-            ),
+            )
           ],
         ),
       ),

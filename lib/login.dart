@@ -95,35 +95,32 @@ class _LoginState extends State<Login> {
           ),
           SizedBox(height: 20,),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: InkWell(
-              onTap: () {
-                Navigator.push(
-                  context, 
-                  MaterialPageRoute(builder: (context) => SignUp())
-                );
-              },
-              child: Container(
-                height: 60,
-                width: double.infinity,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: Color(0xff006FFD),
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 1,
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xff066FFD),
+                  minimumSize: Size.fromHeight(50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)
                   ),
-                  borderRadius: BorderRadius.circular(20),
+                  padding: EdgeInsets.symmetric(vertical: 15),
                 ),
-                child: Text('Login',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white
-                ),
+                onPressed: (){
+                  Navigator.push(
+                    context, 
+                    MaterialPageRoute(builder: ((context) => SignUp())
+                  )
+                 );
+                }, 
+                child: Text(
+                  'Login',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white
+                  ),
+                )
               ),
-             ),
             ),
-          ),
           SizedBox(height: 10,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
