@@ -94,10 +94,18 @@ class _NextPageState extends State<NextPage> {
               ),
             ),
             SizedBox(height: 20,),
-            Padding(
+          Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
-              child: InkWell(
-                onTap: () {
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xff066FFD),
+                  minimumSize: Size.fromHeight(50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)
+                  ),
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                ),
+                onPressed: (){
                   setState(() {
                     if (_selectedIndices.length >= 3){
                       Navigator.push(
@@ -115,34 +123,22 @@ class _NextPageState extends State<NextPage> {
                               //color: Colors.black,
                               fontSize: 15,
                               fontWeight: FontWeight.bold
-                            ),
-                            )
+                           ),
                           )
+                        )
                       );
                     }
                   });
-                },
-                child: Container(
-                height: 60,
-                width: double.infinity,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: Color(0xff006FFD),
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 2,
+                }, 
+                child: Text(
+                  'Next',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white
                   ),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Text('Next',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white
-                ),
-               ),
+                )
               ),
-            ),
-           ),
+            )
           ],
         ),
       ),
