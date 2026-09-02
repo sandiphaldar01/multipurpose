@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multipurpose/feedback_page.dart';
 import 'package:multipurpose/settings_items.dart';
 
 class Settings extends StatefulWidget {
@@ -18,7 +19,8 @@ class _SettingsState extends State<Settings> {
     'Appearance',
     'Language',
     'Privacy & Security',
-    'Storage'
+    'Storage',
+    'Feedback'
   ];
   @override
   Widget build(BuildContext context) {
@@ -72,8 +74,18 @@ class _SettingsState extends State<Settings> {
               SizedBox(height: 20,),
               Flexible(
                 child: ListView.separated(
-                  itemBuilder: (context, i) => SettingsItems(
-                    items: settings[i]
+                  itemBuilder: (context, i) => InkWell(
+                    onTap: () {
+                      if (i == 8) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => FeedbackPage()) 
+                        );
+                      }
+                    },
+                    child: SettingsItems(
+                      items: settings[i]
+                    ),
                   ), 
                   separatorBuilder: (context, index) => Divider(height: 35,), 
                   itemCount: settings.length
