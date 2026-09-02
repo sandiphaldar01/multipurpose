@@ -59,9 +59,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
                 ),
               ),
             ),
-            Icon(
-              Icons.star_border
-            )
+            
           ],
         ),
       ),
