@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multipurpose/friends.dart';
 
 class FriendsPage extends StatefulWidget {
   const new({super.key});
@@ -8,6 +9,24 @@ class FriendsPage extends StatefulWidget {
 }
 
 class _FriendsPageState extends State<FriendsPage> {
+
+  List<String> names = [
+    'Pallabi',
+    'Baba',
+    'Maa',
+    'Anirban Da',
+    'Bipasa Di',
+    'P - Maa'
+  ];
+  List<String> userNames = [
+    'pallabi@001',
+    'baba@002',
+    'maa@003',
+    'anirbanda@004',
+    'bipasadi@005',
+    'p-maa@006'
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -60,6 +79,23 @@ class _FriendsPageState extends State<FriendsPage> {
                   ),
                   hintText: 'Search'
                 ),
+              ),
+            ),
+            SizedBox(height: 30,),
+            Flexible(
+              child: ListView.separated(
+                itemBuilder: (context, i) => Friends(
+                  name: names[i], 
+                  userName: userNames[i]
+                ), 
+                separatorBuilder: (context, index) => Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Divider(
+                    height: 30,
+                    color: Colors.grey[300],
+                  ),
+                ), 
+                itemCount: names.length,
               ),
             )
           ],
