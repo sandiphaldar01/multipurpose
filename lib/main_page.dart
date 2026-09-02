@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:multipurpose/chats.dart';
+import 'package:multipurpose/friends_page.dart';
 import 'package:multipurpose/settings.dart';
 
 class MainPage extends StatefulWidget {
@@ -13,7 +14,7 @@ class _MainPageState extends State<MainPage> {
 
   final List<Widget> items = [
     Chats(),
-    Text('Friends'),
+    FriendsPage(),
     Settings()
   ];
   int currentIndex = 0;

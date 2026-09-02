@@ -62,10 +62,8 @@ class _ChatsState extends State<Chats> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: TextFormField(
-              
               decoration: InputDecoration(
                 hintText: 'Search',
-                
                 prefixIcon: Icon(Icons.search),
                 filled: true,
                 fillColor: Color(0xffF8F9FE),
