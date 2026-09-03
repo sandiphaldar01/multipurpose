@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:multipurpose/stars.dart';
 
 class FeedbackPage extends StatefulWidget {
   const new({super.key});
@@ -8,6 +9,10 @@ class FeedbackPage extends StatefulWidget {
 }
 
 class _FeedbackPageState extends State<FeedbackPage> {
+
+  final List<int> _selectedStar = [];
+  //final Widget stars = Stars(selected: true,);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,7 +64,25 @@ class _FeedbackPageState extends State<FeedbackPage> {
                 ),
               ),
             ),
-            
+            Flexible(
+              child: ListView.builder(
+                itemBuilder: (context, i) => InkWell(
+                  onTap: () {
+                    setState(() {
+                      if (_selectedStar.contains(i)) {
+                        _selectedStar.remove(i);
+                      }
+                      else {
+                        _selectedStar.add(i);
+                      }
+                    });
+                  },
+                  child: Stars(selected: _selectedStar.contains(i))
+                ),
+                itemCount: 5,
+                scrollDirection: Axis.horizontal,
+              ),
+            )
           ],
         ),
       ),
